@@ -65,7 +65,7 @@ public class Videofile {
 		this.compression = compression;
 	}
 
-	public double calculateFileSize(Videofile videofile) {	
+	public final double calculateFileSize(Videofile videofile) {	
 		double frame = this.width * this.height;
 		double durationSec = this.duration *60;
 		double bitSize = ((frame * this.depth * this.framesPerSecond)/this.compression) * durationSec;

@@ -56,7 +56,7 @@ public class Scan {
 		this.compression = compression;
 	}
 
-	public double calculateFileSize(Scan scan) {
+	public final double calculateFileSize(Scan scan) {
 		double heightInch = this.height / 2.54;
 		double widthInch = this.width / 2.54;
 		double bitSize = (((widthInch *this.resolution) * (heightInch * this.resolution)) * this.depth) / this.compression;

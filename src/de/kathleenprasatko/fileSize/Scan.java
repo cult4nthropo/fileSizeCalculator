@@ -11,9 +11,7 @@ package de.kathleenprasatko.fileSize;
 
 public class Scan {
 	private double width;
-	private double widthInch = width / 2.54;
 	private double height;
-	private double heightInch = height / 2.54;
 	private double depth;
 	private double resolution;
 	private double compression;
@@ -33,7 +31,7 @@ public class Scan {
 	public void setHeight(double height) {
 		this.height = height;
 	}
-
+	
 	public double getDepth() {
 		return depth;
 	}
@@ -58,8 +56,10 @@ public class Scan {
 		this.compression = compression;
 	}
 
-	double calculateFileSize() {
-		double bitSize = (((this.widthInch * this.heightInch)*this.resolution) * this.depth) / this.compression;
+	public double calculateFileSize(Scan scan) {
+		double heightInch = this.height / 2.54;
+		double widthInch = this.width / 2.54;
+		double bitSize = (((widthInch * heightInch)*this.resolution) * this.depth) / this.compression;
 		double fileSize = bitSize/8/(1024*1024);
 		return fileSize;
 	}

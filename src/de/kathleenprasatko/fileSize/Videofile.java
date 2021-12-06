@@ -12,7 +12,6 @@ package de.kathleenprasatko.fileSize;
 public class Videofile {
 	private double width;
 	private double height;
-	private double frame = width * height;
 	private double framesPerSecond;
 	private double duration;
 	private double depth;
@@ -66,8 +65,10 @@ public class Videofile {
 		this.compression = compression;
 	}
 
-	public double calculateFileSize() {	
-		double bitSize = ((this.frame * this.depth * this.framesPerSecond)/this.compression) * this.duration;
+	public double calculateFileSize(Videofile videofile) {	
+		double frame = this.width * this.height;
+		double durationSec = this.duration *60;
+		double bitSize = ((frame * this.depth * this.framesPerSecond)/this.compression) * durationSec;
 		double fileSize = bitSize / 8 / (1024*1024);
 		return fileSize;
 	}

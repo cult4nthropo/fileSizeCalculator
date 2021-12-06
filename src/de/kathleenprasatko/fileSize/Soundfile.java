@@ -14,7 +14,6 @@ public class Soundfile {
 	private double frequency;
 	private double channels;
 	private double duration;
-	private double durationSec = duration * 60;
 		
 	public double getResolution() {
 		return resolution;
@@ -48,8 +47,9 @@ public class Soundfile {
 		this.duration = duration;
 	}
 
-	public double calculateFileSize() {
-		double bitSize = (this.resolution * this.frequency * this.channels) * this.durationSec;
+	public double calculateFileSize(Soundfile soundfile) {
+		double durationSec = this.duration * 60;
+		double bitSize = (this.resolution * this.frequency * this.channels) * durationSec;
 		double fileSize = bitSize / 8 / (1024*1024);
 		return fileSize;
 	}

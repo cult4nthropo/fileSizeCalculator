@@ -11,7 +11,7 @@ public class CalculateFileSize {
 		scan.setWidth(10.5);
 		scan.setHeight(12.0);
 		scan.setDepth(32);
-		scan.setResolution(360);
+		scan.setResolution(760);
 		scan.setCompression(8);
 		
 		//TO-DO: set those values by user input

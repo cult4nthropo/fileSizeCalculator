@@ -1,13 +1,15 @@
+package de.kathleenprasatko.fileSize;
+
 /**
- * @author Kathleen Prasatko
- * 
  * Calculates the file size of a scan
  * general formula: ((size of a frame * depth * frames per Second)/compression) * duration in seconds
  * to get the right file size one has to beware of the measurement units like bit and byte or minutes and seconds
  * as well as the unit of the wanted result
+ * 
+ * @since 1.0.0
+ * 
+ * @author Kathleen Prasatko
  */
-
-package de.kathleenprasatko.fileSize;
 
 public class Videofile {
 	private double width;
@@ -66,6 +68,10 @@ public class Videofile {
 	}
 
 	public final double calculateFileSize(Videofile videofile) {	
+		/**
+		 * takes all the values and calculates the file size of a video file
+		 * @return file size of a video
+		 */
 		double frame = this.width * this.height;
 		double durationSec = this.duration *60;
 		double bitSize = ((frame * this.depth * this.framesPerSecond)/this.compression) * durationSec;

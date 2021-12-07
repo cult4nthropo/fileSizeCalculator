@@ -1,13 +1,14 @@
+package de.kathleenprasatko.fileSize;
+
 /**
- * @author Kathleen Prasatko
- * 
  * Calculates the file size of a sound file
  * general formula: (resolution * frequency * channels) * duration in seconds
  * to get the right file size one has to beware of the measurement units like bit and byte or Hz and MHz
  * as well as the unit of the wanted result
+ * 
+ * @since 1.0.0
+ *  @author Kathleen Prasatko
  */
-
-package de.kathleenprasatko.fileSize;
 
 public class Soundfile {
 	private double resolution;
@@ -48,6 +49,10 @@ public class Soundfile {
 	}
 
 	public final double calculateFileSize(Soundfile soundfile) {
+		/**
+		 * takes all the values and calculates the file size of a sound file
+		 * @return file size of a sound file
+		 */
 		double durationSec = this.duration * 60;
 		double bitSize = (this.resolution * this.frequency * this.channels) * durationSec;
 		double fileSize = bitSize / 8 / (1024*1024);

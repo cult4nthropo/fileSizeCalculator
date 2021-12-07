@@ -1,13 +1,14 @@
+package de.kathleenprasatko.fileSize;
+
 /**
- * @author Kathleen Prasatko
- * 
+ * Class Scan with width, height, color depth, resolution and compression
  * Calculates the file size of a scan
  * general formula: ((width * height) * resolution) / compression
- * to get the right file size one has to beware of the measurement units like bit and byte or inch and centimeter
- * as well as the unit of the wanted result
+ * 
+ * @since 1.0.0
+ * 
+ * @author Kathleen Prasatko
  */
-
-package de.kathleenprasatko.fileSize;
 
 public class Scan {
 	private double width;
@@ -57,6 +58,10 @@ public class Scan {
 	}
 
 	public final double calculateFileSize(Scan scan) {
+		/**
+		 * takes all the values and calculates the file size of a scan
+		 * @return file size of a scan
+		 */
 		double heightInch = this.height / 2.54;
 		double widthInch = this.width / 2.54;
 		double bitSize = (((widthInch *this.resolution) * (heightInch * this.resolution)) * this.depth) / this.compression;

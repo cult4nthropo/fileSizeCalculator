@@ -1,5 +1,6 @@
 package de.kathleenprasatko.fileSize.calculator;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import de.kathleenprasatko.fileSize.Scan;
@@ -16,7 +17,7 @@ import de.kathleenprasatko.fileSize.Videofile;
  */
 
 public class CalculateFileSize {
-	private static Scanner scanner = new Scanner(System.in);
+	
 
 	public static void main(String[] args) {
 		/**
@@ -26,9 +27,11 @@ public class CalculateFileSize {
 		 */
 		boolean repeat = true;
 		while (repeat) {
-			//TODO: Add exception handling for the calculations. Right now the program breaks if the user enters a string (try catch with InputMismatchException)
-			//TODO: Exception handling: avoid negative values
+			
+			
+			//TODO: try except block repeats every 5th line -> find optimization to avoid repeating
 			//TODO: round the file size to 2 decimals
+			Scanner scanner = new Scanner(System.in);
 			System.out.println("Do you want to calculat a [1] Scan, a [2] Soundfile or a [3] videofile. Press [0] to end the program?");
 			String filechoice = scanner.next().toLowerCase().intern();
 			
@@ -36,78 +39,171 @@ public class CalculateFileSize {
 				case "0":
 					System.out.println("End");
 					repeat = false;
-					break;
+					continue;
+					
 				case "1":
 					Scan scan = new Scan();
-						
 					System.out.println("Width of the Scan in cm: ");
+				try {
 					double widthScan = scanner.nextDouble();
 					scan.setWidth(widthScan);
+				} catch(InputMismatchException | InvalidValueException e) {
+					System.out.println("Please enter a number bigger than 0.");
+					scanner.close();
+					continue;
+				} 
 					System.out.print("Height of the Scan in cm: ");
+				try {
 					double heightScan = scanner.nextDouble();
 					scan.setHeight(heightScan);
+				} catch(InputMismatchException | InvalidValueException e) {
+					System.out.println("Please enter a number bigger than 0.");
+					scanner.close();
+					continue;
+				}
 					System.out.print("Depth of color: ");
+				try {
 					double depthScan = scanner.nextDouble();
 					scan.setDepth(depthScan);
+				} catch(InputMismatchException | InvalidValueException e) {
+					System.out.println("Please enter a number bigger than 0.");
+					scanner.close();
+					continue;
+				}
 					System.out.print("Resolution of the Scan: ");
+				try {
 					double resolutionScan = scanner.nextDouble();
 					scan.setResolution(resolutionScan);
+				} catch(InputMismatchException | InvalidValueException e) {
+					System.out.println("Please enter a number bigger than 0.");
+					scanner.close();
+					continue;
+				}
 					System.out.print("Compression of the Scan: ");
+				try {
 					double compressionScan = scanner.nextDouble();
-					scan.setCompression(compressionScan);		
+					scan.setCompression(compressionScan);
+				} catch(InputMismatchException | InvalidValueException e) {
+					System.out.println("Please enter a number bigger than 0.");
+					scanner.close();
+					continue;
+				}		
+					
 					double fileSizeScan = scan.calculateFileSize(scan);
 					
 					System.out.println(fileSizeScan);
 					break;
+					
 				case "2" :
 					Soundfile soundfile = new Soundfile();
 					System.out.print("How many channels has your file: ");
+				try {
 					double channelsSound = scanner.nextDouble();
 					soundfile.setChannels(channelsSound);
+				} catch(InputMismatchException | InvalidValueException e) {
+					System.out.println("Please enter a number bigger than 0.");
+					scanner.close();
+					continue;
+				}
 					System.out.print("How long in minutes does it go: ");
+				try {
 					double durationSound = scanner.nextDouble();
 					soundfile.setDuration(durationSound);
+				} catch(InputMismatchException | InvalidValueException e) {
+					System.out.println("Please enter a number bigger than 0.");
+					scanner.close();
+					continue;
+				}
 					System.out.print("Which frequency in Hz does it have: ");
+				try {
 					double frequencySound = scanner.nextDouble();
 					soundfile.setFrequency(frequencySound);
+				} catch(InputMismatchException | InvalidValueException e) {
+					System.out.println("Please enter a number bigger than 0.");
+					scanner.close();
+					continue;
+				}
 					System.out.print("Resolution of the sound file: ");
+				try {
 					double resolutionSound = scanner.nextDouble();
 					soundfile.setResolution(resolutionSound);
+				} catch(InputMismatchException | InvalidValueException e) {
+					System.out.println("Please enter a number bigger than 0.");
+					scanner.close();
+					continue;
+				}
+				
 					
 					double fileSizeSound = soundfile.calculateFileSize(soundfile);	
 					System.out.println(fileSizeSound);
 					break;
+					
 				case "3":
 					Videofile videofile = new Videofile();
 					System.out.print("Which width has this frame in px: ");
+				try {
 					double widthVideo = scanner.nextDouble();
 					videofile.setWidth(widthVideo);
+				} catch(InputMismatchException | InvalidValueException e) {
+					System.out.println("Please enter a number bigger than 0.");
+					scanner.close();
+					continue;
+				}
 					System.out.print("Which height has this frame in px: ");
+				try {
 					double heightVideo = scanner.nextDouble();
 					videofile.setHeight(heightVideo);
+				} catch(InputMismatchException | InvalidValueException e) {
+					System.out.println("Please enter a number bigger than 0.");
+					scanner.close();
+					continue;
+				}
 					System.out.print("Which depth has this video: ");
+				try {
 					double depthVideo = scanner.nextDouble();
 					videofile.setDepth(depthVideo);
+				} catch(InputMismatchException | InvalidValueException e) {
+					System.out.println("Please enter a number bigger than 0.");
+					scanner.close();
+					continue;
+				}
 					System.out.print("How many frames per second: ");
+				try {
 					double framesPerSecondVideo = scanner.nextDouble();
 					videofile.setFramesPerSecond(framesPerSecondVideo);
+				} catch(InputMismatchException | InvalidValueException e) {
+					System.out.println("Please enter a number bigger than 0.");
+					scanner.close();
+					continue;
+				}
 					System.out.print("How long in minutes does it go: ");
+				try {
 					double durationVideo = scanner.nextDouble();
 					videofile.setDuration(durationVideo);
+				} catch(InputMismatchException | InvalidValueException e) {
+					System.out.println("Please enter a number bigger than 0.");
+					scanner.close();
+					continue;
+				}
 					System.out.print("Compression of the video: ");
+				try {
 					double compressionVideo = scanner.nextDouble();
 					videofile.setCompression(compressionVideo);
-					
-					
-					double fileSizeVideo = videofile.calculateFileSize(videofile);
-					System.out.println(fileSizeVideo);
-					break;
+				} catch(InputMismatchException | InvalidValueException e) {
+					System.out.println("Please enter a number bigger than 0.");
+					scanner.close();
+					continue;
+				}
+				
+				double fileSizeVideo = videofile.calculateFileSize(videofile);
+				System.out.println(fileSizeVideo);
+				break;
+				
 				default:
-					System.out.println("Bitte nur [1], [2] oder [3] eingeben.");
+					System.out.println("Please enter only [1], [2] or [3].");
+					scanner.close();
 			}
-			//scanner.close();
-			//TODO: Find correct position for scanner to open and close
+			
 		}
-		
 	}
 }

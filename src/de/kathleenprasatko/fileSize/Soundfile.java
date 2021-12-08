@@ -1,5 +1,7 @@
 package de.kathleenprasatko.fileSize;
 
+import de.kathleenprasatko.fileSize.calculator.InvalidValueException;
+
 /**
  * Calculates the file size of a sound file
  * general formula: (resolution * frequency * channels) * duration in seconds
@@ -19,40 +21,67 @@ public class Soundfile {
 	public double getResolution() {
 		return resolution;
 	}
-
-	public void setResolution(double resolution) {
+	/**
+	 * sets the values of a scan and throws an exception if the user puts negative values.
+	 * @param resolution
+	 * @throws InvalidValueException
+	 */
+	public void setResolution(double resolution) throws InvalidValueException{
+		if(resolution  <= 0) {
+			throw new InvalidValueException("The value can not be negative.");
+			}
 		this.resolution = resolution;
 	}
 
 	public double getFrequency() {
 		return frequency;
 	}
-
-	public void setFrequency(double frequency) {
+	/**
+	 * sets the values of a scan and throws an exception if the user puts negative values.
+	 * @param frequency
+	 * @throws InvalidValueException
+	 */
+	public void setFrequency(double frequency) throws InvalidValueException{
+		if(frequency  <= 0) {
+			throw new InvalidValueException("The value can not be negative.");
+			}
 		this.frequency = frequency;
 	}
 
 	public double getChannels() {
 		return channels;
 	}
-
-	public void setChannels(double channels) {
+	/**
+	 * sets the values of a scan and throws an exception if the user puts negative values.
+	 * @param channels
+	 * @throws InvalidValueException
+	 */
+	public void setChannels(double channels) throws InvalidValueException{
+		if(channels  <= 0) {
+			throw new InvalidValueException("The value can not be negative.");
+			}
 		this.channels = channels;
 	}
 
 	public double getDuration() {
 		return duration;
 	}
-
-	public void setDuration(double duration) {
+	/**
+	 * sets the values of a scan and throws an exception if the user puts negative values.
+	 * @param duration
+	 * @throws InvalidValueException
+	 */
+	public void setDuration(double duration) throws InvalidValueException {
+		if(duration  <= 0) {
+			throw new InvalidValueException("The value can not be negative.");
+			}
 		this.duration = duration;
 	}
-
+	/**
+	 * takes all the values and calculates the file size of a sound file
+	 * @return file size of a sound file
+	 */
 	public final double calculateFileSize(Soundfile soundfile) {
-		/**
-		 * takes all the values and calculates the file size of a sound file
-		 * @return file size of a sound file
-		 */
 		double durationSec = this.duration * 60;
 		double bitSize = (this.resolution * this.frequency * this.channels) * durationSec;
 		double fileSize = bitSize / 8 / (1024*1024);

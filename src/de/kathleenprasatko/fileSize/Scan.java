@@ -1,4 +1,5 @@
 package de.kathleenprasatko.fileSize;
+import de.kathleenprasatko.fileSize.calculator.InvalidValueException;
 
 /**
  * Class Scan with width, height, color depth, resolution and compression
@@ -20,48 +21,82 @@ public class Scan {
 	public double getWidth() {
 		return width;
 	}
-
-	public void setWidth(double width) {
+	/**
+	 * sets the values of a scan and throws an exception if the user puts negative values.
+	 * @param width
+	 * @throws InvalidValueException
+	 */
+	public void setWidth(double width) throws InvalidValueException {
+		if(width  <= 0) {
+			throw new InvalidValueException("The value can not be negative.");
+		}
 		this.width = width;
 	}
-
+	
 	public double getHeight() {
 		return height;
 	}
-
-	public void setHeight(double height) {
+	/**
+	 * sets the values of a scan and throws an exception if the user puts negative values.
+	 * @param height
+	 * @throws InvalidValueException
+	 */
+	public void setHeight(double height) throws InvalidValueException {
+		if(height  <= 0) {
+			throw new InvalidValueException("The value can not be negative.");
+		}
 		this.height = height;
 	}
 	
 	public double getDepth() {
 		return depth;
 	}
-
-	public void setDepth(double depth) {
+	/**
+	 * sets the values of a scan and throws an exception if the user puts negative values.
+	 * @param depth
+	 * @throws InvalidValueException
+	 */
+	public void setDepth(double depth) throws InvalidValueException {
+		if(depth  <= 0) {
+			throw new InvalidValueException("The value can not be negative.");
+		}
 		this.depth = depth;
 	}
 
 	public double getResolution() {
 		return resolution;
 	}
-
-	public void setResolution(double resolution) {
+	/**
+	 * sets the values of a scan and throws an exception if the user puts negative values.
+	 * @param resolution
+	 * @throws InvalidValueException
+	 */
+	public void setResolution(double resolution) throws InvalidValueException {
+		if(resolution  <= 0) {
+			throw new InvalidValueException("The value can not be negative. and has to be a number");
+		}
 		this.resolution = resolution;
 	}
 
 	public double getCompression() {
 		return compression;
 	}
-
-	public void setCompression(double compression) {
+	/**
+	 * sets the values of a scan and throws an exception if the user puts negative values.
+	 * @param compression
+	 * @throws InvalidValueException
+	 */
+	public void setCompression(double compression) throws InvalidValueException {
+		if(resolution  <= 0) {
+			throw new InvalidValueException("The value can not be negative.");
+		}
 		this.compression = compression;
 	}
-
+	/**
+	 * takes all the values and calculates the file size of a scan
+	 * @return file size of a scan
+	 */
 	public final double calculateFileSize(Scan scan) {
-		/**
-		 * takes all the values and calculates the file size of a scan
-		 * @return file size of a scan
-		 */
 		double heightInch = this.height / 2.54;
 		double widthInch = this.width / 2.54;
 		double bitSize = (((widthInch *this.resolution) * (heightInch * this.resolution)) * this.depth) / this.compression;

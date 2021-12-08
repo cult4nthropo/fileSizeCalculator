@@ -1,5 +1,7 @@
 package de.kathleenprasatko.fileSize;
 
+import de.kathleenprasatko.fileSize.calculator.InvalidValueException;
+
 /**
  * Calculates the file size of a scan
  * general formula: ((size of a frame * depth * frames per Second)/compression) * duration in seconds
@@ -22,56 +24,97 @@ public class Videofile {
 	public double getWidth() {
 		return width;
 	}
-
-	public void setWidth(double width) {
+	/**
+	 * sets the values of a scan and throws an exception if the user puts negative values.
+	 * @param width
+	 * @throws InvalidValueException
+	 */
+	public void setWidth(double width) throws InvalidValueException {
+		if(width  <= 0) {
+			throw new InvalidValueException("The value can not be negative.");
+			}
 		this.width = width;
 	}
 
 	public double getHeight() {
 		return height;
 	}
-
-	public void setHeight(double height) {
+	/**
+	 * sets the values of a scan and throws an exception if the user puts negative values.
+	 * @param height
+	 * @throws InvalidValueException
+	 */
+	public void setHeight(double height) throws InvalidValueException {
+		if(height  <= 0) {
+			throw new InvalidValueException("The value can not be negative.");
+			}
 		this.height = height;
 	}
 
 	public double getFramesPerSecond() {
 		return framesPerSecond;
 	}
-
-	public void setFramesPerSecond(double framesPerSecond) {
+	/**
+	 * sets the values of a scan and throws an exception if the user puts negative values.
+	 * @param frames per second
+	 * @throws InvalidValueException
+	 */
+	public void setFramesPerSecond(double framesPerSecond) throws InvalidValueException {
+		if(framesPerSecond  <= 0) {
+			throw new InvalidValueException("The value can not be negative.");
+			}
 		this.framesPerSecond = framesPerSecond;
 	}
 
 	public double getDuration() {
 		return duration;
 	}
-
-	public void setDuration(double duration) {
+	/**
+	 * sets the values of a scan and throws an exception if the user puts negative values.
+	 * @param duration
+	 * @throws InvalidValueException
+	 */
+	public void setDuration(double duration) throws InvalidValueException {
+		if(duration  <= 0) {
+			throw new InvalidValueException("The value can not be negative.");
+			}
 		this.duration = duration;
 	}
 
 	public double getDepth() {
 		return depth;
 	}
-
-	public void setDepth(double depth) {
+	/**
+	 * sets the values of a scan and throws an exception if the user puts negative values.
+	 * @param depth
+	 * @throws InvalidValueException
+	 */
+	public void setDepth(double depth) throws InvalidValueException{
+		if(depth  <= 0) {
+			throw new InvalidValueException("The value can not be negative.");
+			}
 		this.depth = depth;
 	}
 
 	public double getCompression() {
 		return compression;
 	}
-
-	public void setCompression(double compression) {
+	/**
+	 * sets the values of a scan and throws an exception if the user puts negative values.
+	 * @param compression
+	 * @throws InvalidValueException
+	 */
+	public void setCompression(double compression) throws InvalidValueException{
+		if(compression  <= 0) {
+			throw new InvalidValueException("The value can not be negative.");
+			}
 		this.compression = compression;
 	}
-
+	/**
+	 * takes all the values and calculates the file size of a video file
+	 * @return file size of a video
+	 */
 	public final double calculateFileSize(Videofile videofile) {	
-		/**
-		 * takes all the values and calculates the file size of a video file
-		 * @return file size of a video
-		 */
 		double frame = this.width * this.height;
 		double durationSec = this.duration *60;
 		double bitSize = ((frame * this.depth * this.framesPerSecond)/this.compression) * durationSec;

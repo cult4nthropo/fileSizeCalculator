@@ -39,20 +39,15 @@ public class CalculateFileSize {
 					Scan scan = new Scan();
 					System.out.println("Width of the Scan in cm: ");
 				try {
-					double widthScan = scanner.nextDouble();
-					scan.setWidth(widthScan);
+					scan.setWidth(scanner.nextDouble());
 					System.out.print("Height of the Scan in cm: ");
-					double heightScan = scanner.nextDouble();
-					scan.setHeight(heightScan);
+					scan.setHeight(scanner.nextDouble());
 					System.out.print("Depth of color: ");
-					double depthScan = scanner.nextDouble();
-					scan.setDepth(depthScan);
+					scan.setDepth(scanner.nextDouble());
 					System.out.print("Resolution of the Scan: ");
-					double resolutionScan = scanner.nextDouble();
-					scan.setResolution(resolutionScan);
+					scan.setResolution(scanner.nextDouble());
 					System.out.print("Compression of the Scan: ");
-					double compressionScan = scanner.nextDouble();
-					scan.setCompression(compressionScan);
+					scan.setCompression(scanner.nextDouble());
 				} catch(Exception e) {
 					System.out.println("Please enter a number bigger than 0.");
 					continue;
@@ -65,17 +60,13 @@ public class CalculateFileSize {
 						Soundfile soundfile = new Soundfile();
 						System.out.print("How many channels has your file: ");
 					try {
-						double channelsSound = scanner.nextDouble();
-						soundfile.setChannels(channelsSound);
+						soundfile.setChannels(scanner.nextDouble());
 						System.out.print("How long in minutes does it go: ");
-						double durationSound = scanner.nextDouble();
-						soundfile.setDuration(durationSound);
+						soundfile.setDuration(scanner.nextDouble());
 						System.out.print("Which frequency in Hz does it have: ");
-						double frequencySound = scanner.nextDouble();
-						soundfile.setFrequency(frequencySound);
+						soundfile.setFrequency(scanner.nextDouble());
 						System.out.print("Resolution of the sound file: ");
-						double resolutionSound = scanner.nextDouble();
-						soundfile.setResolution(resolutionSound);
+						soundfile.setResolution(scanner.nextDouble());
 					} catch(Exception e) {
 						System.out.println("Please enter a number bigger than 0.");
 						continue;
@@ -88,23 +79,17 @@ public class CalculateFileSize {
 					Videofile videofile = new Videofile();
 					System.out.print("Which width has this frame in px: ");
 					try {
-						double widthVideo = scanner.nextDouble();
-						videofile.setWidth(widthVideo);
+						videofile.setWidth(scanner.nextDouble());
 						System.out.print("Which height has this frame in px: ");
-						double heightVideo = scanner.nextDouble();
-						videofile.setHeight(heightVideo);
+						videofile.setHeight(scanner.nextDouble());
 						System.out.print("Which depth has this video: ");
-						double depthVideo = scanner.nextDouble();
-						videofile.setDepth(depthVideo);
+						videofile.setDepth(scanner.nextDouble());
 						System.out.print("How many frames per second: ");
-						double framesPerSecondVideo = scanner.nextDouble();
-						videofile.setFramesPerSecond(framesPerSecondVideo);
+						videofile.setFramesPerSecond(scanner.nextDouble());
 						System.out.print("How long in minutes does it go: ");
-						double durationVideo = scanner.nextDouble();
-						videofile.setDuration(durationVideo);
+						videofile.setDuration(scanner.nextDouble());
 						System.out.print("Compression of the video: ");
-						double compressionVideo = scanner.nextDouble();
-						videofile.setCompression(compressionVideo);
+						videofile.setCompression(scanner.nextDouble());
 					} catch(Exception e) {
 						System.out.println("Please enter a number bigger than 0.");
 						continue;

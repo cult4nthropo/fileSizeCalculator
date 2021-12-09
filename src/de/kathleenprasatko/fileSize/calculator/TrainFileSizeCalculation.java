@@ -24,52 +24,36 @@ public class TrainFileSizeCalculation {
 					System.out.println("End");
 					repeat = false;
 					continue;
-					
+				//TODO: the randInt still gets negative values -> find a way to define a minimum	
 				case "1":
 					Scan scan = new Scan();
-					
-					double widthScan = rand.nextInt((100 - 1 + 1) + 1);
-					scan.setWidth(widthScan);
-					double heightScan = rand.nextInt((100 - 1 + 1) + 1);
-					scan.setHeight(heightScan);
-					double depthScan = rand.nextInt((65 - 1 + 1) + 1);
-					scan.setDepth(depthScan);
-					double resolutionScan = rand.nextInt((100 - 1 + 1) + 1);
-					scan.setResolution(resolutionScan);
-					double compressionScan = rand.nextInt((13 - 1 + 1) + 1);
-					scan.setCompression(compressionScan);
+					scan.setWidth(rand.nextInt((100 - 1 + 1) + 1));
+					scan.setHeight(rand.nextInt((100 - 1 + 1) + 1));
+					scan.setDepth(rand.nextInt((65 - 1 + 1) + 1));
+					scan.setResolution(rand.nextInt((100 - 1 + 1) + 1));
+					scan.setCompression(rand.nextInt((13 - 1 + 1) + 1));
 					scan.calculateFileSize(scan);
 					//TODO: print the values, user input and if else to check the result
 					break;
 					
 				case "2" :
 					Soundfile soundfile = new Soundfile();
-					double channelsSoundfile = rand.nextInt((16 -1 + 1) + 1);
-					soundfile.setChannels(channelsSoundfile);
-					double frequencySoundfile = rand.nextInt((3500 -1000 +1) + 1);
-					soundfile.setFrequency(frequencySoundfile);
-					double durationSoundfile = rand.nextInt((120 - 1 + 1) +1 );
-					soundfile.setDuration(durationSoundfile);
-					double resolutionSoundfile = rand.nextInt((36 - 1 + 1) + 1);
-					soundfile.setResolution(resolutionSoundfile);
+					soundfile.setChannels(rand.nextInt((16 -1 + 1) + 1));
+					soundfile.setFrequency(rand.nextInt((3500 -1000 +1) + 1));
+					soundfile.setDuration(rand.nextInt((120 - 1 + 1) +1 ));
+					soundfile.setResolution(rand.nextInt((36 - 1 + 1) + 1));
 					soundfile.calculateFileSize(soundfile);
 					//TODO: user input and if else to check the result
 					break;
 					
 				case "3":
 					Videofile videofile = new Videofile();
-					double widthVideo = rand.nextInt((3600 - 1 + 1) + 1);
-					videofile.setWidth(widthVideo);
-					double heightVideo = rand.nextInt((7500 - 1 + 1) + 1);
-					videofile.setHeight(heightVideo);
-					double framesPerSecondVideo = rand.nextInt((56 - 1 + 1) + 1);
-					videofile.setFramesPerSecond(framesPerSecondVideo);
-					double depthVideofile = rand.nextInt((56 - 1 + 1) + 1);
-					videofile.setDepth(depthVideofile);
-					double durationVideofile = rand.nextInt((126 - 1 + 1) + 1);
-					videofile.setDuration(durationVideofile);
-					double compressionVideofile = rand.nextInt((24 - 1 + 1) + 1);
-					videofile.setCompression(compressionVideofile);
+					videofile.setWidth(rand.nextInt((3600 - 1 + 1) + 1));
+					videofile.setHeight(rand.nextInt((7500 - 1 + 1) + 1));
+					videofile.setFramesPerSecond(rand.nextInt((56 - 1 + 1) + 1));
+					videofile.setDepth(rand.nextInt((56 - 1 + 1) + 1));
+					videofile.setDuration(rand.nextInt((126 - 1 + 1) + 1));
+					videofile.setCompression(rand.nextInt((24 - 1 + 1) + 1));
 					videofile.calculateFileSize(videofile);
 					//TODO: print the values, user input and if else to check the result
 						break;

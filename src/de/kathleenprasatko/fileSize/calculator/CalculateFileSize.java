@@ -59,7 +59,7 @@ public class CalculateFileSize {
 					System.out.print("Compression of the Scan: ");
 					double compressionScan = scanner.nextDouble();
 					scan.setCompression(compressionScan);
-				} catch(InputMismatchException | InvalidValueException e) {
+				} catch(Exception e) {
 					System.out.println("Please enter a number bigger than 0.");
 					continue;
 				}		
@@ -84,7 +84,7 @@ public class CalculateFileSize {
 						System.out.print("Resolution of the sound file: ");
 						double resolutionSound = scanner.nextDouble();
 						soundfile.setResolution(resolutionSound);
-					} catch(InputMismatchException | InvalidValueException e) {
+					} catch(Exception e) {
 						System.out.println("Please enter a number bigger than 0.");
 						continue;
 					}
@@ -113,7 +113,7 @@ public class CalculateFileSize {
 						System.out.print("Compression of the video: ");
 						double compressionVideo = scanner.nextDouble();
 						videofile.setCompression(compressionVideo);
-					} catch(InputMismatchException | InvalidValueException e) {
+					} catch(Exception e) {
 						System.out.println("Please enter a number bigger than 0.");
 						continue;
 					}

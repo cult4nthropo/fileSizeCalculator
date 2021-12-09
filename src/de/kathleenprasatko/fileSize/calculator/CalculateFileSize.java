@@ -1,6 +1,5 @@
 package de.kathleenprasatko.fileSize.calculator;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import de.kathleenprasatko.fileSize.Scan;
@@ -17,8 +16,6 @@ import de.kathleenprasatko.fileSize.Videofile;
  */
 
 public class CalculateFileSize {
-	
-
 	public static void main(String[] args) {
 		/**
 		 * @param the instances of scan, sound file and video file
@@ -28,11 +25,8 @@ public class CalculateFileSize {
 		boolean repeat = true;
 		Scanner scanner = new Scanner(System.in);
 		while (repeat) {
-		
-			//TODO: try except block repeats every 5th line -> find optimization to avoid repeating
 			//TODO: round the file size to 2 decimals
-			
-			System.out.println("Do you want to calculat a [1] Scan, a [2] Soundfile or a [3] videofile. Press [0] to end the program?");
+			System.out.println("Do you want to calculate a [1] Scan, a [2] Soundfile or a [3] videofile. Press [0] to end the program?");
 			String filechoice = scanner.next();
 			
 			switch (filechoice) {
@@ -63,9 +57,7 @@ public class CalculateFileSize {
 					System.out.println("Please enter a number bigger than 0.");
 					continue;
 				}		
-					
 					double fileSizeScan = scan.calculateFileSize(scan);
-					
 					System.out.println(fileSizeScan);
 					break;
 					

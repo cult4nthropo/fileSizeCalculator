@@ -15,7 +15,6 @@ public class TrainFileSizeCalculation {
 		boolean repeat = true;
 		Scanner scanner = new Scanner(System.in);
 		while (repeat) {
-			Random rand = new Random();
 			System.out.println("Do you want to calculate a [1] Scan, a [2] Soundfile or a [3] videofile. Press [0] to end the program?");
 			String filechoice = scanner.next();
 			
@@ -24,37 +23,45 @@ public class TrainFileSizeCalculation {
 					System.out.println("End");
 					repeat = false;
 					continue;
-				//TODO: the randInt still gets negative values -> find a way to define a minimum	
+				//TODO: define realistic values in file variables
 				case "1":
 					Scan scan = new Scan();
-					scan.setWidth(rand.nextInt((100 - 1 + 1) + 1));
-					scan.setHeight(rand.nextInt((100 - 1 + 1) + 1));
-					scan.setDepth(rand.nextInt((65 - 1 + 1) + 1));
-					scan.setResolution(rand.nextInt((100 - 1 + 1) + 1));
-					scan.setCompression(rand.nextInt((13 - 1 + 1) + 1));
-					scan.calculateFileSize(scan);
+					Random randomScan = new Random();
+					scan.setWidth(randomScan.nextInt(36)+1);
+					System.out.println(scan.getWidth());
+					scan.setHeight(randomScan.nextInt(36)+1);
+					System.out.println(scan.getHeight());
+					scan.setDepth(randomScan.nextInt(36)+1);
+					System.out.println(scan.getDepth());
+					scan.setResolution(randomScan.nextInt(36)+1);
+					System.out.println(scan.getResolution());
+					scan.setCompression(randomScan.nextInt(36)+1);
+					System.out.println(scan.getCompression());
+					System.out.println(randomScan.nextInt(36)+1);
 					//TODO: print the values, user input and if else to check the result
 					break;
 					
 				case "2" :
 					Soundfile soundfile = new Soundfile();
-					soundfile.setChannels(rand.nextInt((16 -1 + 1) + 1));
-					soundfile.setFrequency(rand.nextInt((3500 -1000 +1) + 1));
-					soundfile.setDuration(rand.nextInt((120 - 1 + 1) +1 ));
-					soundfile.setResolution(rand.nextInt((36 - 1 + 1) + 1));
-					soundfile.calculateFileSize(soundfile);
+					Random randomSoundfile = new Random();
+					soundfile.setChannels(randomSoundfile.nextInt(36)+1);
+					soundfile.setFrequency(randomSoundfile.nextInt(36)+1);
+					soundfile.setDuration(randomSoundfile.nextInt(36)+1);
+					soundfile.setResolution(randomSoundfile.nextInt(36)+1);
+					System.out.println(soundfile.calculateFileSize(soundfile));
 					//TODO: user input and if else to check the result
 					break;
 					
 				case "3":
 					Videofile videofile = new Videofile();
-					videofile.setWidth(rand.nextInt((3600 - 1 + 1) + 1));
-					videofile.setHeight(rand.nextInt((7500 - 1 + 1) + 1));
-					videofile.setFramesPerSecond(rand.nextInt((56 - 1 + 1) + 1));
-					videofile.setDepth(rand.nextInt((56 - 1 + 1) + 1));
-					videofile.setDuration(rand.nextInt((126 - 1 + 1) + 1));
-					videofile.setCompression(rand.nextInt((24 - 1 + 1) + 1));
-					videofile.calculateFileSize(videofile);
+					Random randomVideofile = new Random();
+					videofile.setWidth(randomVideofile.nextInt(36)+1);
+					videofile.setHeight(randomVideofile.nextInt(36)+1);
+					videofile.setFramesPerSecond(randomVideofile.nextInt(36)+1);
+					videofile.setDepth(randomVideofile.nextInt(36)+1);
+					videofile.setDuration(randomVideofile.nextInt(36)+1);
+					videofile.setCompression(randomVideofile.nextInt(36)+1);
+					System.out.println(videofile.calculateFileSize(videofile));
 					//TODO: print the values, user input and if else to check the result
 						break;
 				
@@ -64,4 +71,5 @@ public class TrainFileSizeCalculation {
 		}
 		scanner.close();
 	}
+	
 }

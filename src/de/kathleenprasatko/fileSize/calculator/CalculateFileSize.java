@@ -16,18 +16,18 @@ import de.kathleenprasatko.fileSize.Videofile;
  */
 
 public class CalculateFileSize {
-	public static void main(String[] args) {
+	public  void calculate() {
 		/**
 		 * @param the instances of scan, sound file and video file
 		 * @return the file size of the instances of scan, sound file and video file
 		 * As long as the user wants to calculate a file, he can chose the file class, enter the values and let the program calculate the file size
 		 */
 		boolean repeat = true;
-		Scanner scanner = new Scanner(System.in);
+		Scanner scannerCalc = new Scanner(System.in);
 		while (repeat) {
 			//TODO: round the file size to 2 decimals
 			System.out.println("Do you want to calculate a [1] Scan, a [2] Soundfile or a [3] videofile. Press [0] to end the program?");
-			String filechoice = scanner.next();
+			String filechoice = scannerCalc.next();
 			
 			switch (filechoice) {
 				case "0":
@@ -39,15 +39,15 @@ public class CalculateFileSize {
 					Scan scan = new Scan();
 					System.out.println("Width of the Scan in cm: ");
 				try {
-					scan.setWidth(scanner.nextDouble());
+					scan.setWidth(scannerCalc.nextDouble());
 					System.out.print("Height of the Scan in cm: ");
-					scan.setHeight(scanner.nextDouble());
+					scan.setHeight(scannerCalc.nextDouble());
 					System.out.print("Depth of color: ");
-					scan.setDepth(scanner.nextDouble());
+					scan.setDepth(scannerCalc.nextDouble());
 					System.out.print("Resolution of the Scan: ");
-					scan.setResolution(scanner.nextDouble());
+					scan.setResolution(scannerCalc.nextDouble());
 					System.out.print("Compression of the Scan: ");
-					scan.setCompression(scanner.nextDouble());
+					scan.setCompression(scannerCalc.nextDouble());
 				} catch(Exception e) {
 					System.out.println("Please enter a number bigger than 0.");
 					continue;
@@ -60,13 +60,13 @@ public class CalculateFileSize {
 						Soundfile soundfile = new Soundfile();
 						System.out.print("How many channels has your file: ");
 					try {
-						soundfile.setChannels(scanner.nextDouble());
+						soundfile.setChannels(scannerCalc.nextDouble());
 						System.out.print("How long in minutes does it go: ");
-						soundfile.setDuration(scanner.nextDouble());
+						soundfile.setDuration(scannerCalc.nextDouble());
 						System.out.print("Which frequency in Hz does it have: ");
-						soundfile.setFrequency(scanner.nextDouble());
+						soundfile.setFrequency(scannerCalc.nextDouble());
 						System.out.print("Resolution of the sound file: ");
-						soundfile.setResolution(scanner.nextDouble());
+						soundfile.setResolution(scannerCalc.nextDouble());
 					} catch(Exception e) {
 						System.out.println("Please enter a number bigger than 0.");
 						continue;
@@ -79,17 +79,17 @@ public class CalculateFileSize {
 					Videofile videofile = new Videofile();
 					System.out.print("Which width has this frame in px: ");
 					try {
-						videofile.setWidth(scanner.nextDouble());
+						videofile.setWidth(scannerCalc.nextDouble());
 						System.out.print("Which height has this frame in px: ");
-						videofile.setHeight(scanner.nextDouble());
+						videofile.setHeight(scannerCalc.nextDouble());
 						System.out.print("Which depth has this video: ");
-						videofile.setDepth(scanner.nextDouble());
+						videofile.setDepth(scannerCalc.nextDouble());
 						System.out.print("How many frames per second: ");
-						videofile.setFramesPerSecond(scanner.nextDouble());
+						videofile.setFramesPerSecond(scannerCalc.nextDouble());
 						System.out.print("How long in minutes does it go: ");
-						videofile.setDuration(scanner.nextDouble());
+						videofile.setDuration(scannerCalc.nextDouble());
 						System.out.print("Compression of the video: ");
-						videofile.setCompression(scanner.nextDouble());
+						videofile.setCompression(scannerCalc.nextDouble());
 					} catch(Exception e) {
 						System.out.println("Please enter a number bigger than 0.");
 						continue;
@@ -102,6 +102,6 @@ public class CalculateFileSize {
 					System.out.println("Please enter only [1], [2] or [3].");
 			}
 		}
-		scanner.close();
+		//scannerCalc.close();
 	}
 }

@@ -20,11 +20,11 @@ public class FileSizeTool {
 				repeat = false;
 				break;
 			case "1":
-				CalculateFileSize calculation = new CalculateFileSize();
+				CalculateFileSize calculation = new CalculateFileSize(scanner);
 				calculation.calculate();
 				break;
 			case "2":
-				TrainFileSizeCalculation training = new TrainFileSizeCalculation();
+				TrainFileSizeCalculation training = new TrainFileSizeCalculation(scanner);
 				training.train();
 				break;
 			default:

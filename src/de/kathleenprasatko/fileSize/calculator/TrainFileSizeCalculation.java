@@ -8,12 +8,15 @@ import de.kathleenprasatko.fileSize.Videofile;
 import de.kathleenprasatko.fileSize.Soundfile;
 
 public class TrainFileSizeCalculation {
-
+	private Scanner scannerTrain;
+	public TrainFileSizeCalculation(Scanner scanner) {
+		this.scannerTrain = scanner;
+	}
 	public void train() throws InvalidValueException {
 		System.out.println("This trainer will ask for the file size of a scan, soundfile or videofile with random values.");
 		
 		boolean repeat = true;
-		Scanner scannerTrain = new Scanner(System.in);
+	
 		while (repeat) {
 			System.out.println("Do you want to calculate a [1] Scan, a [2] Soundfile or a [3] videofile. Press [0] to end the program?");
 			String filechoice = scannerTrain.next();
@@ -69,7 +72,6 @@ public class TrainFileSizeCalculation {
 					System.out.println("Please enter only [1], [2] or [3].");
 			}
 		}
-		//scannerTrain.close();
 	}
 	
 }

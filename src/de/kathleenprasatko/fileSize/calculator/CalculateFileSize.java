@@ -16,6 +16,10 @@ import de.kathleenprasatko.fileSize.Videofile;
  */
 
 public class CalculateFileSize {
+	private Scanner scannerCalc;
+	public CalculateFileSize(Scanner scanner) {
+		this.scannerCalc = scanner;
+	}
 	public  void calculate() {
 		/**
 		 * @param the instances of scan, sound file and video file
@@ -23,7 +27,7 @@ public class CalculateFileSize {
 		 * As long as the user wants to calculate a file, he can chose the file class, enter the values and let the program calculate the file size
 		 */
 		boolean repeat = true;
-		Scanner scannerCalc = new Scanner(System.in);
+		//Scanner scannerCalc = new Scanner(System.in);
 		while (repeat) {
 			//TODO: round the file size to 2 decimals
 			System.out.println("Do you want to calculate a [1] Scan, a [2] Soundfile or a [3] videofile. Press [0] to end the program?");

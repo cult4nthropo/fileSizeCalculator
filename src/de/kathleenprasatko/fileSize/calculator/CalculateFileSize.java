@@ -27,7 +27,7 @@ public class CalculateFileSize {
 		 * As long as the user wants to calculate a file, he can chose the file class, enter the values and let the program calculate the file size
 		 */
 		boolean repeat = true;
-		//Scanner scannerCalc = new Scanner(System.in);
+		
 		while (repeat) {
 			//TODO: round the file size to 2 decimals
 			System.out.println("Do you want to calculate a [1] Scan, a [2] Soundfile or a [3] videofile. Press [0] to end the program?");
@@ -106,6 +106,5 @@ public class CalculateFileSize {
 					System.out.println("Please enter only [1], [2] or [3].");
 			}
 		}
-		//scannerCalc.close();
 	}
 }

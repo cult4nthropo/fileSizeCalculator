@@ -99,7 +99,7 @@ public class Scan {
 	public final double calculateFileSize(Scan scan) {
 		double heightInch = this.height / 2.54;
 		double widthInch = this.width / 2.54;
-		double bitSize = (((widthInch *this.resolution) * (heightInch * this.resolution)) * this.depth) / this.compression;
+		double bitSize = ((widthInch *this.resolution) * (heightInch * this.resolution) * this.depth) / this.compression;
 		double fileSize = bitSize/8/(1024*1024);
 		return fileSize;
 	}

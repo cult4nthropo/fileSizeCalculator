@@ -1,3 +1,6 @@
 doc
 bin
 filesize.jar
+/.idea/
+/.settings/
+/bin/

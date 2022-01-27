@@ -7,10 +7,6 @@ import de.kathleenprasatko.fileSize.calculator.InvalidValueException;
  * general formula: ((size of a frame * depth * frames per Second)/compression) * duration in seconds
  * to get the right file size one has to beware of the measurement units like bit and byte or minutes and seconds
  * as well as the unit of the wanted result
- * 
- * @since 1.0.0
- * 
- * @author Kathleen Prasatko
  */
 
 public class Videofile {
@@ -20,10 +16,7 @@ public class Videofile {
 	private double duration;
 	private double depth;
 	private double compression;
-		
-	public double getWidth() {
-		return width;
-	}
+
 	/**
 	 * sets the values of a scan and throws an exception if the user puts negative values.
 	 * @param width
@@ -36,9 +29,6 @@ public class Videofile {
 		this.width = width;
 	}
 
-	public double getHeight() {
-		return height;
-	}
 	/**
 	 * sets the values of a scan and throws an exception if the user puts negative values.
 	 * @param height
@@ -51,12 +41,9 @@ public class Videofile {
 		this.height = height;
 	}
 
-	public double getFramesPerSecond() {
-		return framesPerSecond;
-	}
 	/**
 	 * sets the values of a scan and throws an exception if the user puts negative values.
-	 * @param frames per second
+	 * @param framesPerSecond
 	 * @throws InvalidValueException
 	 */
 	public void setFramesPerSecond(double framesPerSecond) throws InvalidValueException {
@@ -66,9 +53,6 @@ public class Videofile {
 		this.framesPerSecond = framesPerSecond;
 	}
 
-	public double getDuration() {
-		return duration;
-	}
 	/**
 	 * sets the values of a scan and throws an exception if the user puts negative values.
 	 * @param duration
@@ -81,9 +65,6 @@ public class Videofile {
 		this.duration = duration;
 	}
 
-	public double getDepth() {
-		return depth;
-	}
 	/**
 	 * sets the values of a scan and throws an exception if the user puts negative values.
 	 * @param depth
@@ -96,9 +77,6 @@ public class Videofile {
 		this.depth = depth;
 	}
 
-	public double getCompression() {
-		return compression;
-	}
 	/**
 	 * sets the values of a scan and throws an exception if the user puts negative values.
 	 * @param compression

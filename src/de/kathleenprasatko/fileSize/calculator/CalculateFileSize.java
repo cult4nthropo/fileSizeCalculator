@@ -10,9 +10,6 @@ import de.kathleenprasatko.fileSize.Videofile;
  * Start class of the file size calculator.
  * Takes the values of the file by user input
  * @see java.util.Scanner#next()
- * @since 1.0.0
- * 
- * @author Kathleen Prasatko
  */
 
 public class CalculateFileSize {

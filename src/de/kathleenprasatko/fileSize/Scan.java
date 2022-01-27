@@ -5,10 +5,6 @@ import de.kathleenprasatko.fileSize.calculator.InvalidValueException;
  * Class Scan with width, height, color depth, resolution and compression
  * Calculates the file size of a scan
  * general formula: ((width * height) * resolution) / compression
- * 
- * @since 1.0.0
- * 
- * @author Kathleen Prasatko
  */
 
 public class Scan {
@@ -17,10 +13,7 @@ public class Scan {
 	private double depth;
 	private double resolution;
 	private double compression;
-		
-	public double getWidth() {
-		return width;
-	}
+
 	/**
 	 * sets the values of a scan and throws an exception if the user puts negative values.
 	 * @param width
@@ -32,10 +25,7 @@ public class Scan {
 		}
 		this.width = width;
 	}
-	
-	public double getHeight() {
-		return height;
-	}
+
 	/**
 	 * sets the values of a scan and throws an exception if the user puts negative values.
 	 * @param height
@@ -47,10 +37,7 @@ public class Scan {
 		}
 		this.height = height;
 	}
-	
-	public double getDepth() {
-		return depth;
-	}
+
 	/**
 	 * sets the values of a scan and throws an exception if the user puts negative values.
 	 * @param depth
@@ -63,9 +50,6 @@ public class Scan {
 		this.depth = depth;
 	}
 
-	public double getResolution() {
-		return resolution;
-	}
 	/**
 	 * sets the values of a scan and throws an exception if the user puts negative values.
 	 * @param resolution
@@ -78,9 +62,6 @@ public class Scan {
 		this.resolution = resolution;
 	}
 
-	public double getCompression() {
-		return compression;
-	}
 	/**
 	 * sets the values of a scan and throws an exception if the user puts negative values.
 	 * @param compression

@@ -7,9 +7,6 @@ import de.kathleenprasatko.fileSize.calculator.InvalidValueException;
  * general formula: (resolution * frequency * channels) * duration in seconds
  * to get the right file size one has to beware of the measurement units like bit and byte or Hz and MHz
  * as well as the unit of the wanted result
- * 
- * @since 1.0.0
- *  @author Kathleen Prasatko
  */
 
 public class Soundfile {
@@ -17,10 +14,7 @@ public class Soundfile {
 	private double frequency;
 	private double channels;
 	private double duration;
-		
-	public double getResolution() {
-		return resolution;
-	}
+
 	/**
 	 * sets the values of a scan and throws an exception if the user puts negative values.
 	 * @param resolution
@@ -33,9 +27,6 @@ public class Soundfile {
 		this.resolution = resolution;
 	}
 
-	public double getFrequency() {
-		return frequency;
-	}
 	/**
 	 * sets the values of a scan and throws an exception if the user puts negative values.
 	 * @param frequency
@@ -48,9 +39,6 @@ public class Soundfile {
 		this.frequency = frequency;
 	}
 
-	public double getChannels() {
-		return channels;
-	}
 	/**
 	 * sets the values of a scan and throws an exception if the user puts negative values.
 	 * @param channels
@@ -63,9 +51,6 @@ public class Soundfile {
 		this.channels = channels;
 	}
 
-	public double getDuration() {
-		return duration;
-	}
 	/**
 	 * sets the values of a scan and throws an exception if the user puts negative values.
 	 * @param duration

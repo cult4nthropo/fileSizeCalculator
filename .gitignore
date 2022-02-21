@@ -1,6 +1,8 @@
 doc
 bin
 filesize.jar
-/.idea/
-/.settings/
+*.idea/
+*.settings/
+*.classpath
+
 /bin/
